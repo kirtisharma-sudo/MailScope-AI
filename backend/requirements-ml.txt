@@ -1,0 +1,10 @@
+# Optional — only needed once a fine-tuned DeBERTa checkpoint exists at
+# NLP_MODEL_PATH (see backend/services/nlp_detector.py and
+# models/deberta-phishing/). NOT required for the app to start or for the
+# existing test suite to pass — install only when you actually have a
+# trained checkpoint to serve.
+#
+# Install with:
+#   pip install -r requirements.txt -r requirements-ml.txt
+transformers==4.44.2
+torch==2.4.1
