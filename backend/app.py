@@ -6,6 +6,13 @@ from fastapi.responses import JSONResponse, FileResponse
 
 from config import get_settings
 from routes import analyze, analytics, campaigns, reports
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent
+FRONTEND_PATH = BASE_DIR / "frontend" / "mailscope-ai-v5.html"
+@app.get("/")
+async def serve_frontend():
+    return FileResponse(FRONTEND_PATH)
 
 logging.basicConfig(level=logging.INFO)
 settings = get_settings()
